@@ -10,6 +10,7 @@ import postcssDiscardComments from 'postcss-discard-comments';
 import postcssReduceInitial from 'postcss-reduce-initial';
 import postcssMinifyGradients from 'postcss-minify-gradients';
 import postcssSvgo from 'postcss-svgo';
+import reduceDisplayValues from './lib/reduceDisplayValues';
 import postcssReduceTransforms from 'postcss-reduce-transforms';
 import autoprefixer from 'autoprefixer';
 import postcssZindex from 'postcss-zindex';
@@ -47,6 +48,7 @@ let processors = {
     postcssMinifyGradients,
     postcssReduceInitial,
     postcssSvgo,
+    reduceDisplayValues,
     postcssReduceTransforms,
     autoprefixer,
     postcssZindex,
