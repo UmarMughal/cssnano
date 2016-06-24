@@ -1,4 +1,5 @@
 import {mappings} from '../../lib/reduceDisplayValues';
+import getData from '../util/getData';
 
 const tests = [{
     message: 'display: block ruby (pass through)',
@@ -6,10 +7,7 @@ const tests = [{
     expected: 'display:block ruby'
 }];
 
-const data = mappings.reduce((list, mapping) => {
-    list[mapping[0]] = mapping[1].join(' ');
-    return list;
-}, {});
+const data = getData(mappings);
 
 Object.keys(data).forEach(key => {
     const fixture = data[key];

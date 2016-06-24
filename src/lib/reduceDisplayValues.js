@@ -1,5 +1,6 @@
 import postcss from 'postcss';
 import valueParser from 'postcss-value-parser';
+import evenValues from './evenValues';
 import getMatchFactory from './getMatch';
 
 /**
@@ -34,7 +35,7 @@ function transform (node) {
     if (nodes.length === 1) {
         return;
     }
-    const match = getMatch(nodes.filter((list, i) => i % 2 === 0).map(n => n.value));
+    const match = getMatch(nodes.filter(evenValues).map(n => n.value));
     if (match.length) {
         node.value = match[0][0];
     }
